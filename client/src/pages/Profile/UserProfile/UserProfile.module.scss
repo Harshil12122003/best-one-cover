@@ -1,0 +1,33 @@
+@import '../../../styles/breakpoints.module.scss';
+@import '../../../styles/colors.module.scss';
+.UserDetailsWrapper{
+
+    .contentWrapper{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray-300;
+
+        .profileTitle{
+            margin-top: 7px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+       
+    }
+
+    .mainDetailWrapper{
+        margin: 20px 0;
+
+        .infoWrapper{
+            margin: 20px 0;
+            display: flex;
+            .labelWrapper{
+                width: 35%;
+            }
+            @include responsive('mdDown'){
+        flex-direction: column;
+      }
+        }
+    }
+}

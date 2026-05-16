@@ -1,0 +1,76 @@
+@import "../../../../styles/breakpoints.module.scss";
+@import "../../../../styles/colors.module.scss";
+
+.variation {
+  background-color: $white;
+  box-shadow: 0 3px 10px 0 #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  p {
+    color: $gray-600;
+  }
+  .variationWrapper {
+    .addVariaton {
+      .variantField {
+        display: flex;
+        margin-bottom: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        .variantList {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+          border-bottom: 2px solid $gray-300;
+          padding-bottom: 12px;
+          :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+            width: 31%;
+          }
+          .removeVariant {
+            width: 20px;
+            border: 1px solid $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 20px;
+            margin: auto 0;
+            :global(.css-i4bv87-MuiSvgIcon-root) {
+              font-size: 12px;
+            }
+          }
+          @include responsive("lgDown") {
+            flex-direction: column;
+            :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+              width: 100%;
+              margin: 10px 0;
+            }
+          }
+        }
+      }
+      .addField {
+        width: 100%;
+        border: 2px dashed $gray-300;
+        padding: 10px 0;
+        background-color: $white;
+        border-radius: 8px;
+        text-transform: capitalize;
+        &:hover {
+          background-color: $gray-300;
+          transition: 0.8s ease;
+        }
+      }
+
+    }
+    .productBtn {
+      display: flex;
+      margin-top: 25px;
+      justify-content: flex-end;
+      .productBtnWrapper {
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

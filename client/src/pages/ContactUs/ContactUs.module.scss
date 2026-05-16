@@ -1,0 +1,110 @@
+@import "../../styles/breakpoints.module.scss";
+@import "../../styles/colors.module.scss";
+
+.contactUs {
+  min-height: calc(100vh - 195px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+
+  .contactUsContainer {
+    width: 85%;
+
+    // display: flex;
+    .contactInfo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .address,
+      .mobile,
+      .email {
+        width: 290px;
+        text-align: center;
+
+        .addIcon,
+        .phoneIcon,
+        .emailIcon,
+        .webIcon {
+          margin-bottom: 10px;
+          color: $white;
+          font-size: 10px;
+          background-color: #1972D2;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          margin: auto;
+          margin-bottom: 15px;
+        }
+      }
+
+      @include responsive("mdDown") {
+        margin-top: 30px;
+        flex-direction: column;
+
+        .address,
+        .mobile,
+        .email {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .contactForm {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      // height: 500px;
+
+      .form {
+        width: 50%;
+        padding: 20px 30px;
+
+        .name,
+        .email,
+        .message {
+          width: 100%;
+        }
+
+        .email,
+        .message {
+          margin: 20px 0;
+        }
+
+        .sendBtn {
+          width: 200px;
+        }
+      }
+      .mapParent {
+        width: 50%;
+        .map {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      @include responsive("lgDown") {
+        flex-direction: column;
+
+        .form {
+          width: 100%;
+          padding: 35px;
+        }
+        .mapParent {
+          width: 100%;
+          height: 440px;
+        }
+      }
+    }
+  }
+
+  @include responsive("lgDown") {
+    min-height: calc(100vh - 155px);
+  }
+}

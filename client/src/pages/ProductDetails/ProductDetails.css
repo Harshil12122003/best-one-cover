@@ -1,0 +1,136 @@
+
+.left {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  height: 600px;
+  /* position: sticky; */
+  top: 16px;
+  left: 0px;
+}
+
+.left .primary-img img {
+  max-width: 100%;
+  height: 450px;
+}
+
+.left .slider-wrapper .slider .slide img {
+  border-radius: 20px;
+  height: 450px;
+}
+
+.left .carousel .control-dots {
+display: none;
+}
+
+.left .carousel .thumbs-wrapper {
+  margin: 20px 0;
+}
+
+.left .carousel .thumbs {
+  padding-left: 10px;
+}
+
+.left .carousel .thumb {
+  border: 1px solid lightgrey;
+  height: 80px;
+}
+
+.left .carousel .thumb.selected, .left .carousel .thumb:hover {
+  border: 1px solid black;
+}
+
+.left .secondary-img ul li {
+  list-style: none;
+  height: 80px;
+  width: 80px;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.left .secondary-img ul li img {
+  width: 60px;
+  height: 60px;
+}
+
+.right .product-color-brand-model .p-color ul li {
+  list-style: none;
+  height: 100px;
+  width: 80px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.right .product-color-brand-model .p-color ul li img {
+  width: 80px;
+  height: 70px;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.right .product-color-brand-model .p-color ul li p {
+  border-top: 1px solid lightgrey;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.right .product-specification .main-spec .key p {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.right .product-specification .main-spec .value p {
+  margin-bottom: 8px;
+}
+
+.right .ratings-reviews {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.right .ratings-reviews h4 {
+  padding-left: 20px;
+}
+
+.right .ratings-reviews .ratings {
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.right .ratings-reviews .right-ratings ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.right .ratings-reviews .right-ratings ul li .progress {
+  height: 5px;
+}
+
+.right .ratings-reviews .reviews .review {
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.right .ratings-reviews .reviews .review img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.right .ratings-reviews .reviews .all-reviews {
+  text-decoration: none;
+  display: block;
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.mobileBrandValue,.mobileModelValue{
+  border: 1px solid lightgrey ;
+  padding: 10px;
+  padding-left: 15px;
+  font-size: 17px;
+  border-radius: 8px;
+
+}

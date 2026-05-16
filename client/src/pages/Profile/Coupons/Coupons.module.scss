@@ -1,0 +1,68 @@
+@import "../../../styles/colors.module.scss";
+.Coupons {
+  .couponsContainer {
+    text-transform: capitalize;
+    .avaliableWrapper {
+        h3{
+
+            padding: 10px 0;
+        }
+
+      .avaliableContainer {
+        border: 1px solid $gray-400;
+        padding: 15px;
+        .avaliableTitle {
+            display: flex;
+            justify-content: space-between;
+            h5{
+                color: $green;
+            }
+            h6{
+                color: $gray-500;
+            }
+        }
+        .avaliableDesc {
+            display: flex;
+            justify-content: space-between;
+
+          p {
+            color: $blue;
+
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .expiredWrapper {
+        h3{
+            padding: 10px 0;
+        }
+        padding: 10px 0;
+        .expireContainer {
+            border: 1px solid $gray-400;
+            padding: 15px;
+            .expireTitle {
+                display: flex;
+                justify-content: space-between;
+                h5{
+                    font-weight: 800;
+                }
+                h6{
+                    color: $gray-500;
+                }
+            }
+            .expireDesc {
+                display: flex;
+                justify-content: space-between;
+    
+              p {
+                color: $blue;
+    
+                margin-bottom: 0;
+              }
+            }
+          }
+    }
+  }
+}

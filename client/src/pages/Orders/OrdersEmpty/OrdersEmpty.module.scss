@@ -1,0 +1,34 @@
+@import 'styles/breakpoints.module.scss';
+.OrdersEmpty {
+  min-height: calc(100vh - 151px);
+  display: flex;
+  justify-content: center;
+    .OrdersEmptyContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .OrdersEmptyImage {
+        width: 525px;
+        height: 300px;
+        margin-bottom: 20px;
+        @include responsive("smDown"){
+        width: 325px;
+        height: 250px;
+
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .OrdersEmptyDesc{
+        h4{
+            font-weight: 800;
+        }
+      }
+    }
+  }
+  

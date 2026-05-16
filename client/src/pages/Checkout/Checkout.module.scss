@@ -1,0 +1,206 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/breakpoints.module.scss";
+
+.checkOut {
+  // display: flex;
+  // justify-content: center;
+  min-height: calc(100vh - 171px);
+
+  .checkoutStepper {
+    margin: 20px 0;
+  }
+
+  .checkOutContainer {
+    display: flex;
+    justify-content: center;
+
+    .checkoutContent {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: 30px 0;
+      gap: 20px;
+
+      .checkoutOptions {
+        width: 55%;
+
+        .checkoutAddress {
+          background-color: $white;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px 1px $gray-400;
+          width: 100%;
+
+          .deliveryInfo {
+            .infoheader {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid $gray-200;
+              margin-bottom: 10px;
+              padding-bottom: 10px;
+
+              h5 {
+                padding-top: 4px;
+              }
+            }
+
+            .user {
+              // margin-left: 20px;
+              text-transform: capitalize;
+
+              .deliveryBtn {
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+
+        .checkoutPayment {
+          background-color: $white;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px 1px $gray-400;
+
+          .paymentTypes {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .paymentSuccess {
+            margin-top: 20px;
+            margin-left: 25px;
+            // text-align: center;
+          }
+        }
+      }
+
+      .checkoutOrdersummery {
+        background-color: $white;
+        padding: 20px 20px 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 1px $gray-400;
+        width: 42%;
+
+        .orderinfo {
+          .productDetails {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+
+            .productImg {
+              width: 100px;
+              height: 100px;
+
+              img {
+                width: 100%;
+                height: 100%;
+                // cursor: not-allowed;
+                // object-fit: contain;
+              }
+            }
+
+            .product {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              margin-left: 15px;
+
+              .productInfo {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .productTitle {
+                  margin: 0px 15px 15px 15px;
+                }
+              }
+
+              .Qty {
+                display: flex;
+                width: 130px;
+                margin-left: 15px;
+                justify-content: space-between;
+
+                @include responsive("xsDown") {
+                  left: 100px;
+                }
+
+                .decrement,
+                .increment {
+                  border: 1px solid $gray-400;
+                  border-radius: 50%;
+                  width: 25px;
+                  height: 25px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+
+                }
+
+                .decrement:hover {
+                  border-color: $red;
+                  background-color: rgba(255, 0, 0, 0.2);
+                }
+
+                .increment:hover {
+                  border-color: $green;
+                  background-color: rgba(0, 255, 0, 0.2);
+                }
+
+                .qtyValue {
+                  border: 1px solid $gray-400;
+                  width: 60px;
+                  height: 25px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+            }
+
+            .productPrice {
+              width: 100px;
+            }
+          }
+        }
+
+        .priceCal {
+          text-transform: capitalize;
+          margin: 10px 0;
+
+          p {
+            margin: 2px 0;
+          }
+
+          .subTotal {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .deliveryFee {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        .grandTotal {
+          text-transform: uppercase;
+          margin: 10px 0;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      @include responsive("lgDown") {
+        flex-direction: column;
+
+        .checkoutOptions,
+        .checkoutOrdersummery {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,335 @@
+@import "../../../styles/breakpoints.module.scss";
+@import "../../../styles/colors.module.scss";
+
+.addStock {
+  position: relative;
+  min-height: calc(100vh - 108px);
+
+  .loader {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  padding-top: 15px;
+
+  .addStockHeadLine {
+    display: flex;
+    padding: 10px 0;
+
+    .BreadCrumb {
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+  }
+
+  .addStockContainer {
+    width: 100%;
+    padding: 20px 0;
+
+    // padding: 20px;
+    .addStockForm {
+      display: flex;
+      justify-content: space-between;
+
+      .leftLayout {
+        width: 62%;
+
+        .stockDetails {
+          background-color: $white;
+          box-shadow: 0 3px 10px 0 #dee2e6;
+          border-radius: 8px;
+          padding: 30px;
+
+          h3 {
+            margin-top: 0px;
+          }
+
+          .stockDetailsWrapper {
+            .addItems {
+
+              .mobileBrand,
+              .mobileModel,
+              .coverCategory {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+
+                margin-bottom: 25px;
+
+                .brand,
+                .model,
+                .category {
+                  width: 70%;
+
+                  :global(.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root) {
+                    top: 3px !important;
+                  }
+
+                  :global(.css-z629a2-MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input) {
+                    padding: 6px;
+                  }
+                }
+
+                .addBrand,
+                .addModel,
+                .addCategory {
+
+                  .brandBtn,
+                  .modelBtn,
+                  .categoryBtn {
+                    width: 175px;
+                    padding: 11px 0;
+                  }
+                }
+
+                @include responsive("smDown") {
+                  flex-direction: column;
+                }
+              }
+            }
+
+            .productQty {
+              display: flex;
+              justify-content: space-between;
+              margin: 25px 0;
+
+              .quantity,
+              .buyPrice {
+                width: 48%;
+              }
+
+              @include responsive("smDown") {
+                flex-direction: column;
+                gap: 25px;
+
+                .quantity,
+                .buyPrice {
+                  width: 100%;
+                }
+              }
+            }
+
+            .productColor {
+              width: 100%;
+
+              :global(.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root) {
+                top: 3px !important;
+              }
+
+              :global(.css-4xbbh5-MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input) {
+                padding: 6px;
+              }
+            }
+
+            @include responsive("mdDown") {
+
+              .mobileBrand,
+              .mobileModel,
+              .coverCategory,
+              .coverBrand {
+                display: block;
+
+                .mobileBrandSelect,
+                .mobileModelSelect,
+                .coverCategorySelect,
+                .coverBrandSelect {
+                  width: 100%;
+                  margin-bottom: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .rightLayout {
+        width: 36%;
+
+        .media {
+          background-color: $white;
+          box-shadow: 0 3px 10px 0 #dee2e6;
+          border-radius: 8px;
+          padding: 25px;
+          margin-bottom: 20px;
+
+          h3 {
+            margin-top: 0px;
+            text-transform: capitalize;
+          }
+
+          .uploadMedia {
+            display: block;
+            width: 100%;
+            height: 230px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 20px;
+            border: 1px dashed $gray-500;
+            background-color: "#FAFAFA";
+            position: relative;
+
+            &:hover {
+              border: 1px dashed $blue;
+
+              .editDiv {
+                display: flex;
+              }
+            }
+
+            .upload {
+              display: none;
+            }
+
+            .editDiv {
+              display: none;
+              justify-content: center;
+              position: absolute;
+              // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+              // padding: 10px;
+              // border-radius: 50%;
+              // right: 8px;
+              // top: -20px;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background-color: rgba(0, 0, 0, 0.5);
+              z-index: 99999;
+              align-items: center;
+            }
+
+            .uploadLogo {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 20px;
+
+              img {
+                width: 60px;
+              }
+
+              p {
+                color: $gray-500;
+                margin: 0;
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          .uploadList {
+            display: flex;
+
+            // flex-wrap: wrap;
+            // justify-content: space-between;
+            .addBtn {
+              width: 80px;
+              height: 80px;
+              border-radius: 8px;
+              border: 1px dashed $gray-300;
+              color: $gray-500;
+              background-color: $white;
+              margin-right: 5px;
+              font-size: 25px;
+
+              &:hover {
+                border: 1px dashed $blue;
+              }
+            }
+
+            .uploadPicList {
+              display: flex;
+              margin-top: 10px;
+
+              // flex-wrap: wrap;
+              // justify-content: space-between;
+              .uploadPic {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
+                border: 1px dashed $gray-300;
+                color: $gray-500;
+                margin-right: 5px;
+                position: relative;
+                font-size: 20px;
+
+                :global(.css-i4bv87-MuiSvgIcon-root) {
+                  font-size: 32px;
+                }
+
+                .uploadSingle {
+                  display: none;
+                }
+
+                &:hover {
+                  .previewImg {
+                    display: block;
+                  }
+                }
+
+                .previewImg {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                  display: none;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  border: none;
+                  border-radius: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include responsive("lgDown") {
+        display: block;
+
+        .leftLayout,
+        .rightLayout {
+          width: 100%;
+        }
+
+        .rightLayout {
+          .media {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .addForm {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 70px;
+
+    .addBtn {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.errorMsg {
+  color: $red;
+  font-size: 13px;
+  margin: 5px 10px;
+}

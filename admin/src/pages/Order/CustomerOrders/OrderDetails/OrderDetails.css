@@ -1,0 +1,25 @@
+.customerDetails {
+    margin-top: 15px;
+    min-height: calc(100vh - 125px);
+
+}
+
+.methodsDiv {
+    margin-bottom: 25px;
+}
+
+/* .text-end{
+    text-align: end;
+} */
+
+.totalPriceDiv {
+    text-align: end;
+    /* margin-left: auto;
+    width: 50%; */
+}
+
+.customerBreadCrum {
+    display: flex;
+    padding: 10px 0;
+    gap: 20px;
+}

@@ -1,0 +1,34 @@
+@import "../../../styles/colors.module.scss";
+@import "../../../styles/breakpoints.module.scss";
+
+.addProducts {
+  .addProductContainer {
+    padding-top: 15px;
+    // .productHeader {
+      .productHeadLine {
+        display: flex;
+        padding: 10px 0;
+        h2 {
+          text-transform: capitalize;
+          margin-right: 20px;
+        }
+        .BreadCrumb{
+          margin-top: 5px;
+        }
+      }
+      .productTabs{
+        margin: 20px 0px;
+      }
+      // .productBtn {
+      //   display: flex;
+      //   padding: 0 24px;
+      //   justify-content: flex-end;
+      //   .productBtnWrapper {
+      //     width: 250px;
+      //     display: flex;
+      //     justify-content: space-between;
+      //   }
+      // }
+    // }
+  }
+}

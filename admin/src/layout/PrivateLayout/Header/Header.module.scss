@@ -1,0 +1,107 @@
+@import "../../../styles/breakpoints.module.scss";
+@import "../../../styles/colors.module.scss";
+
+.active {
+  background-color: "rgb(235,241,254)" !important;
+  color: "rgb(8 72 202)" !important;
+  border-right: "2px solid rgb(8 72 202)" !important;
+}
+
+.profileBox {
+  :global(
+      .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
+    ) {
+    top: 67px !important;
+    right: 30px !important;
+    width: 170px;
+
+    .box{
+      &:hover{
+        background-color: #EBF1FE;
+      }
+
+      .profileIcon {
+        margin-right: 13px;
+        color: $layout-nav;
+      }
+      
+      .profileIconTitle {
+        font-size: 15px;
+        color: $layout-nav;
+      }
+
+      &:hover .profileIcon,
+      &:hover .profileIconTitle {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.mobileBox {
+  :global(
+      .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
+    ) {
+    top: 60px !important;
+    width: 140px;
+    :global(.css-6hp17o-MuiList-root-MuiMenu-list) {
+      padding: 7px 0;
+
+      :global(.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root) {
+        padding: 0;
+        padding-left: 6px;
+      }
+    }
+  }
+}
+:global(.css-1nxmd3h-MuiListItem-root) {
+  display: block !important;
+}
+.mainSideBar {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $gray-300;
+    border-radius: 50px;
+  }
+
+  .DrawerLogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    min-height: 66px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    gap: 38px;
+    z-index: 20;
+    padding: 0px 16px;
+    border-bottom: 1px solid $gray-400;
+    .Logo {
+      cursor: pointer;
+    }
+    .menuBtn{
+      cursor: pointer;
+      font-size: 28px;
+      padding: 0px;
+    }
+  }
+
+}
+:global(.css-ykqool-MuiPaper-root-MuiAppBar-root) {
+  width: calc(100% - 260px) !important;
+}
+:global(.css-m9mp0w-MuiToolbar-root) {
+  min-height: 66px !important;
+}
+
+:global(.css-cvumne-MuiDrawer-docked .MuiDrawer-paper) {
+  width: 260px !important;
+
+  :global(.css-h4y409-MuiList-root) {
+    max-height: calc(100vh - 80px);
+  }
+}

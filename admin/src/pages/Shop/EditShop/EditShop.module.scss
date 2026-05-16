@@ -1,0 +1,20 @@
+@import "../../../styles/colors.module.scss";
+@import "../../../styles/breakpoints.module.scss";
+
+.editShop {
+  width: 100%;
+  .editShopHeader {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid $gray-300;
+    padding: 20px 0;
+    .editBreadCrumb{
+      margin-top: 5px;
+    }
+  }
+  .editAddressForm {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+  }
+}

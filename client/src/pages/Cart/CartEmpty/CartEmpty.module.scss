@@ -1,0 +1,32 @@
+@import "../../../styles/breakpoints.module.scss";
+.cartEmpty {
+  // min-height: calc(100vh - 102px);
+  min-height: 68vh;
+  display: flex;
+  justify-content: center;
+  .cartEmptyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    .cartEmptyImage {
+      height: 370px;
+      width: 450px;
+
+      @include responsive("smDown") {
+        height: 280px;
+        width: 336px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cartEmptyDesc {
+      h4 {
+        font-weight: 600;
+      }
+    }
+  }
+}

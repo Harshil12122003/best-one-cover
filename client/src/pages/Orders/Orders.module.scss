@@ -1,0 +1,201 @@
+@import "styles/breakpoints.module.scss";
+@import "styles/colors.module.scss";
+
+.Orders {
+  min-height: calc(100vh - 151px);
+  display: flex;
+  justify-content: center;
+  .OrdersContainer {
+    padding: 20px;
+    width: 90%;
+    .invoice {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        text-transform: capitalize;
+      }
+    }
+    .orderContent {
+      display: flex;
+      justify-content: space-between;
+      // position: fixed;
+      .ordersLeftSession {
+        width: 41%;
+        text-transform: capitalize;
+        .orderHistory {
+          background-color: $white;
+          box-shadow: 0 2px 4px 1px $gray-400;
+          margin-top: 20px;
+          border-radius: 10px;
+          height: 655px;
+          padding: 20px;
+          overflow: auto;
+          .history {
+            margin: 12px 0;
+            cursor: pointer;
+            .orderIdWrapper,
+            .orderDateWrapper {
+              display: flex;
+              justify-content: space-between;
+            }
+            @include responsive("xsDown") {
+              .orderIdWrapper,
+              .orderDateWrapper {
+                flex-direction: column;
+              }
+            }
+          }
+        }
+
+        @include responsive("mdDown") {
+          width: 100%;
+        }
+      }
+
+      .ordersRightSession {
+        width: 57%;
+        display: flex;
+        flex-direction: column;
+        text-transform: capitalize;
+        .orderProduct {
+          background-color: $white;
+          box-shadow: 0 2px 4px 1px $gray-400;
+          margin-top: 20px;
+          border-radius: 10px;
+          padding: 20px 20px 0px;
+          .orderRating {
+            display: flex;
+            justify-content: space-between;
+            @include responsive("xsDown") {
+              flex-direction: column;
+            }
+          }
+          .orderinfo {
+            text-transform: capitalize;
+
+            .productDetails {
+              display: flex;
+              justify-content: space-between;
+              margin: 10px 0;
+              .productImg {
+                width: 100px;
+                height: 100px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+              .product {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0 15px;
+                .productInfo,
+                .ProductQty {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                  margin: 10px 0;
+                  @include responsive("xsDown") {
+                    flex-direction: column;
+                    // align-items: center;
+                  }
+                }
+                .productInfo {
+                  margin: 0;
+                  .productTitle {
+                    width: 80%;
+                  }
+                  .productPrice {
+                    width: 20%;
+                    text-align: end;
+                  }
+                }
+              }
+              @include responsive("xsDown") {
+                flex-direction: column;
+                // align-items: center;
+              }
+            }
+          }
+        }
+
+        .orderDetails {
+          background-color: $white;
+          box-shadow: 0 2px 4px 1px $gray-400;
+          margin-top: 20px;
+          border-radius: 10px;
+          padding: 20px;
+
+          .productDetails {
+            gap: 10px;
+            margin-top: 20px;
+
+            .userContactNum,
+            .userAddredss,
+            .orderInvoice {
+              display: flex;
+              justify-content: space-between;
+              @include responsive("xsDown") {
+                flex-direction: column;
+                p {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+        .orderSummary {
+          background-color: $white;
+          box-shadow: 0 2px 4px 1px $gray-400;
+          margin-top: 20px;
+          border-radius: 10px;
+          padding: 20px;
+
+          .priceCal {
+            text-transform: capitalize;
+            margin: 10px 0;
+            margin-top: 20px;
+            p {
+              margin: 2px 0;
+            }
+            .subTotal,
+            .deliveryFee {
+              display: flex;
+              justify-content: space-between;
+              // @include responsive("xsDown") {
+              //   flex-direction: column;
+              // }
+            }
+          }
+          .grandTotal {
+            text-transform: uppercase;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            // @include responsive("xsDown") {
+            //   flex-direction: column;
+            // }
+          }
+        }
+        // @include responsive("lgDown") {
+        //   flex-direction: column;
+        //   .orderDetails,
+        //   .orderSummary {
+        //     width: 100%;
+        //   }
+        // }
+        @include responsive("mdDown") {
+          width: 100%;
+        }
+      }
+      @include responsive("mdDown") {
+        flex-direction: column;
+      }
+    }
+    // @include responsive("lgDown") {
+    //     width: 90%;
+    // }
+  }
+}

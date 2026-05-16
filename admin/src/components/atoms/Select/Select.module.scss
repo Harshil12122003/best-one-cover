@@ -1,0 +1,10 @@
+.select{
+    width: 100%;
+    :global(.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root){
+        top: -4px;
+        text-transform: capitalize;
+    }
+    :global(.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input){
+        padding: 12px 9px;
+    }
+}

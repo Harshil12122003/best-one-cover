@@ -1,0 +1,16 @@
+@import "../../../styles/colors.module.scss";
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Box {
+    min-width: 250px;
+    background: $white;
+    box-shadow: 1px 1px 10px $gray-800;
+    padding: 20px;
+
+    .description {
+      margin: 10px 0;
+    }
+  }
+}

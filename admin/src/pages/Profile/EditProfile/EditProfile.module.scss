@@ -1,0 +1,55 @@
+@import '../../../styles/colors.module.scss';
+@import '../../../styles/breakpoints.module.scss';
+
+.EditProfileWrapper {
+
+    .contentWrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray-300;
+
+        .profileTitle {
+            margin-top: 7px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .Btn {
+            width: 172px;
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    .mainDetailWrapper {
+        margin: 20px 0;
+
+        .infoWrapper {
+            margin: 15px 0;
+            display: flex;
+
+            .labelWrapper {
+                width: 35%;
+                text-transform: capitalize;
+            }
+
+            :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+                width: 50%;
+
+                @include responsive('mdDown') {
+                    width: 80%;
+                }
+
+                @include responsive('smDown') {
+                    width: 100%;
+                    margin-top: 5px;
+                }
+            }
+
+            @include responsive('smDown') {
+                flex-direction: column;
+            }
+        }
+    }
+}

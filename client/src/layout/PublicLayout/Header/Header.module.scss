@@ -1,0 +1,193 @@
+@import "../../../styles/breakpoints.module.scss";
+@import "../../../styles/colors.module.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  :global(.css-hip9hq-MuiPaper-root-MuiAppBar-root) {
+    background-color: $bg-white;
+    color: $black;
+  }
+
+  .headerBar {
+    .menuIcon {
+      display: none;
+
+      @include responsive("lgDown") {
+        display: block;
+        margin: 0px;
+      }
+    }
+
+    .mainlogo {
+      font-weight: 800;
+      width: 130px;
+      text-overflow: clip;
+    }
+
+    .search {
+      background-color: $gray-300;
+      margin: 0 16px;
+
+      .searchInput {
+        width: 450px;
+
+        @include responsive("lgDown") {
+          width: 100%;
+        }
+      }
+
+      @include responsive("lgDown") {
+        width: 100%;
+      }
+    }
+
+    .headerMenu {
+      display: flex;
+
+      @include responsive("lgDown") {
+        display: none;
+      }
+    }
+  }
+
+  .brandItems {
+    display: flex;
+    justify-content: center;
+    color: $white;
+    background-color: $layout-nav;
+
+    @include responsive("lgDown") {
+      display: none;
+    }
+
+    .navbar {
+      background-color: $layout-nav;
+      width: 100%;
+
+      .navitem {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 0;
+
+        li {
+          list-style: none;
+          padding: 7px 0;
+
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $white;
+            padding: 0 10px;
+            transition: all 0.3s ease;
+          }
+
+          &:hover {
+            color: $black;
+            background-color: $bg-white;
+
+            .megaBox {
+              opacity: 1;
+              display: block;
+              top: 37px;
+              color: $black;
+              background-color: $bg-white;
+            }
+
+            a {
+              color: $black;
+            }
+          }
+
+          .megaBox {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+            .content {
+              .row {
+                line-height: 15px;
+
+                .megaLinks {
+
+                  display: grid;
+                  grid-template-columns: auto auto auto auto auto;
+                  // display: flex;
+                  // flex-wrap: wrap;
+                  padding: 10px 20px;
+
+                  li {
+                    // width:20%;
+                    a {
+                      color: $black;
+
+                      &:hover {
+                        color: $gray;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.profileBox {
+  :global(.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper) {
+    top: 67px !important;
+    right: 30px !important;
+    width: 170px;
+
+    .profileIcon {
+      margin-right: 13px;
+      color: $layout-nav;
+    }
+
+    .profileIconTitle {
+      font-size: 15px;
+    }
+  }
+}
+
+:global(.css-h4y409-MuiList-root) {
+  text-transform: uppercase;
+}
+
+.sideDrawer {
+  :global(.css-4t3x6l-MuiPaper-root-MuiDrawer-paper) {
+    width: 300px;
+    height: 100vh;
+    color: $white;
+    background-color: $layout-nav;
+  }
+
+  @include responsive('lgDown') {
+    :global(.css-4t3x6l-MuiPaper-root-MuiDrawer-paper) {
+      width: 300px;
+      height: 100vh;
+      color: $white;
+      background-color: $layout-nav;
+    }
+  }
+
+  :global(.css-9mgopn-MuiDivider-root) {
+    border-color: $white;
+  }
+}
+
+:global(.css-1nxmd3h-MuiListItem-root) {
+  display: block !important;
+}

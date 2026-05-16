@@ -1,0 +1,12 @@
+.ManageShop {
+  //   padding: 0 20px;
+  min-height: calc(100vh - 108px);
+  padding: 15px 0;
+  padding-bottom: 25px;
+    .manageShopTitle {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+  }

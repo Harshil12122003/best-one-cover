@@ -1,0 +1,91 @@
+@import '../../../styles/colors.module.scss';
+@import '../../../styles/breakpoints.module.scss';
+
+// .semiFooter{
+//     height: 50px;
+//     // width: 100vw;
+//     padding: 0 30px;
+//     // border-top: 1px solid;
+//     .semiFooterContainer{
+//         display: flex;
+//         justify-content:center;
+//         gap: 20px;
+//     }
+// }   
+
+.semiFooter {
+    padding: 10px 100px 10px 100px;
+    background-color: $layout-nav ;
+    border-bottom-width: 0.5px;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    // border-bottom:  solid white;
+    color: #fff;
+
+    .socialMedia {
+
+        // flex-direction: column;
+        margin-bottom: 20px;
+
+        .mediaIcon {
+            display: flex;
+            gap: 10px;
+
+            .faceBook {
+                color: #fff;
+                font-size: 33px;
+
+                &:hover {
+                    color: #1771E6 ;
+                    background: #fff;
+                    border-radius: 100%;
+                }
+            }
+
+            .instagram {
+                color: #fff;
+                font-size: 33px;
+                border-radius: 10px;
+
+                &:hover {
+                    background: #f09433;
+                    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+                }
+            }
+        }
+
+
+    }
+
+    .footerTitle {
+        width: 160px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 12px;
+        margin-bottom: 10px;
+    }
+}
+
+
+ul {
+    padding: 0;
+}
+
+li .navLink {
+    padding-top: 5px;
+    color: #B2BAC2;
+}
+
+li .navLink:hover {
+    color: #fff;
+}
+
+ul li a:hover {
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+}

@@ -1,0 +1,33 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/colors.module.scss';
+
+.tearmCondition {
+    min-height: calc(100vh - 195px);
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .mainTitle {
+        text-transform: capitalize;
+    }
+
+    .tearmConditionContainer {
+        .information {
+            margin-top: 30px;
+
+            .infoTitle {
+                text-transform: capitalize;
+                margin-bottom: 20px;
+                font-size: 21px;
+            }
+
+            .tagline {
+                font-size: 17px;
+
+            }
+        }
+    }
+}
+
+// .minHeight: "calc(100vh - 355px)",

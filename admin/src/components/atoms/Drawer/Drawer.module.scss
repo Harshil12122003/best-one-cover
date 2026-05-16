@@ -1,0 +1,15 @@
+
+
+.drawer {
+
+    // :global(.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop){
+    //     background-color: transparent;
+    // }
+    :global(.css-18sg6k4-MuiPaper-root-MuiDrawer-paper) {
+      height: calc(100vh - 66px) !important;
+      margin-top: 66px;
+      width: 270px !important;
+      padding: 0 20px;
+    }
+    text-transform: capitalize;
+  }

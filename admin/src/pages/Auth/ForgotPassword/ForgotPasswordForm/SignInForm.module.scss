@@ -1,0 +1,46 @@
+@import "../../../../styles/colors.module.scss";
+@import "../../../../styles/breakpoints.module.scss";
+
+.signInForm {
+  margin-top: 20px;
+  width: 100%;
+
+  .form {
+    // width: 100%;
+
+    .inputField {
+      :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+        width: 100%;
+      }
+    }
+
+    .PasswordField {
+      :global(.css-1nrlq1o-MuiFormControl-root) {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+
+    .forgotPassword {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .signInBtn {
+      :global(.css-sghohy-MuiButtonBase-root-MuiButton-root) {
+        width: 100%;
+      }
+    }
+
+    .NavigatesignUp {
+      margin-top: 25px;
+      text-align: center;
+      p {
+        text-transform: capitalize;
+        color: $gray-600;
+      }
+    }
+  }
+
+}

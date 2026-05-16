@@ -1,0 +1,57 @@
+@import "../../../../styles/colors.module.scss";
+@import "../../../../styles/breakpoints.module.scss";
+
+.signUpForm {
+  margin-top: 20px;
+  width: 100%;
+  .form {
+    width: 100%;
+    .nameField {
+      display: flex;
+      justify-content: space-between;
+      :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+        width: 48%;
+        margin-bottom: 20px;
+      }
+
+      @include responsive("xsDown") {
+        display: block;
+        :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+          width: 100%;
+        }
+      }
+    }
+    .inputField {
+      :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .PasswordField {
+      :global(.css-1nrlq1o-MuiFormControl-root) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .signUpBtn {
+      :global(.css-sghohy-MuiButtonBase-root-MuiButton-root) {
+        width: 100%;
+      }
+    }
+    .signUpBtnDisabled{
+      :global(.css-sghohy-MuiButtonBase-root-MuiButton-root) {
+        width: 100%;
+        cursor: not-allowed;
+      }
+    }
+
+  }
+  .NavigatingSignIn {
+    margin-top: 25px;
+    text-align: center;
+    p {
+      text-transform: capitalize;
+      color: $gray-600;
+    }
+  }
+}

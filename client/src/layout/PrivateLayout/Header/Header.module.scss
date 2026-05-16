@@ -1,0 +1,254 @@
+@import "../../../styles/breakpoints.module.scss";
+@import "../../../styles/colors.module.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  :global(.css-hip9hq-MuiPaper-root-MuiAppBar-root) {
+    background-color: $bg-white!important;
+    color: $black!important;
+  }
+
+  .headerBar {
+    .menuIcon {
+      display: none;
+      background-color: $bg-white!important;
+      color: $black!important;
+      margin-right: 15px !important;
+      @include responsive("lgDown") {
+        display: block;
+        margin: 0px;
+      }
+      @include responsive("smDown") {
+        display: block;
+        margin-right: 5px !important;
+
+      }
+      
+    }
+
+    .mainlogo {
+      font-weight: 800;
+      width: 160px;
+      text-overflow: clip;
+
+      .brands{
+        .brandItems{
+          .megaBox{
+            .collapseBrand{
+              .collapseBrandItems{
+                color: $gray;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .search {
+      .searchInput {
+        width: 600px;
+        
+        :global(.css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input){
+          background-color: $gray-200;
+          color: black;
+          padding-left: calc(1em + 32px) ;
+        }
+
+        @include responsive("lgDown") {
+          width: 100%;
+        }
+        &:focus{
+          border: 1px solid black;
+        }
+      }
+
+      @include responsive("lgDown") {
+        width: 100%;
+      }
+    }
+
+    .headerMenu {
+      display: flex;
+
+      @include responsive("lgDown") {
+        display: none;
+      }
+    }
+  }
+
+  .brandItems {
+    display: flex;
+    justify-content: center;
+    color: $white;
+    background-color: $layout-nav;
+
+    @include responsive("lgDown") {
+      display: none;
+    }
+
+    .navbar {
+      background-color: $layout-nav;
+      width: 100%;
+
+      .navitem {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 0;
+
+        li {
+          list-style: none;
+          margin:  0 10px;
+          padding: 7px 0;
+
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $white;
+            padding: 0 10px;
+            // transition: all 0.3s ease;
+          }
+
+          &:hover {
+            color: $black;
+            background-color: $bg-white;
+
+            .megaBox {
+            opacity: 1;
+              // display: block;
+              visibility: visible;
+              top: 37px;
+              color: $black;
+              background-color: $bg-white;
+
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+            }
+
+            a {
+              color: $black;
+            }
+          }
+
+          .megaBox {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            // display: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+              rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            .content {
+              .row {
+                line-height: 15px;
+
+                .megaLinks {
+                  display: grid;
+                  grid-template-columns: auto auto auto auto auto;
+                  // display: flex;
+                  // flex-wrap: wrap;
+                  padding: 10px 20px;
+
+                  li {
+                    // width:20%;
+                    a {
+                      color: $black;
+
+                      &:hover {
+                        color: $blue;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.profileBox {
+  :global(
+      .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
+    ) {
+    top: 67px !important;
+    right: 30px !important;
+    width: 170px;
+
+    .box{
+      &:hover{
+        background-color: #EBF1FE;
+      }
+
+      .profileIcon {
+        margin-right: 13px;
+        color: $layout-nav;
+      }
+      
+      .profileIconTitle {
+        font-size: 15px;
+        color: $layout-nav;
+      }
+
+      &:hover .profileIcon,
+      &:hover .profileIconTitle {
+        color: $blue;
+      }
+    }
+  }
+}
+
+:global(.css-h4y409-MuiList-root) {
+  text-transform: uppercase;
+}
+
+.sideDrawer {
+  :global(.css-4t3x6l-MuiPaper-root-MuiDrawer-paper) {
+    width: 300px;
+    height: 100vh;
+    color: $white;
+    background-color: $layout-nav;
+  }
+
+  @include responsive("lgDown") {
+    :global(.css-4t3x6l-MuiPaper-root-MuiDrawer-paper) {
+      width: 300px;
+      height: 100vh;
+      color: $white;
+      background-color: $layout-nav;
+    }
+  }
+
+  :global(.css-9mgopn-MuiDivider-root) {
+    border-color: $white;
+  }
+}
+.mobileBox {
+  :global(
+      .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper
+    ) {
+    top: 60px !important;
+    width: 140px;
+    :global(.css-6hp17o-MuiList-root-MuiMenu-list) {
+      padding: 7px 0;
+
+      :global(.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root) {
+        padding: 0;
+        padding-left: 6px;
+      }
+    }
+  }
+}
+:global(.css-1nxmd3h-MuiListItem-root) {
+  display: block !important;
+}

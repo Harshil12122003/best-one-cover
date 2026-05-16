@@ -1,0 +1,12 @@
+
+
+
+    .listItems{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .brandItem{
+        text-transform: capitalize;
+      }
+    }
+  

@@ -1,0 +1,9 @@
+.mainCard{
+    min-width: 275!important; width: 275!important; padding: 1!important; border-radius: '12px'!important;
+}
+
+.mainCardContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}

@@ -1,0 +1,124 @@
+@import "../../../../styles/breakpoints.module.scss";
+@import "../../../../styles/colors.module.scss";
+
+
+.addressForm {
+  width: 70%;
+
+  .addressFormWrapper {
+    .shopDetails {
+      background-color: $white;
+      padding: 15px 20px;
+      padding-bottom: 30px;
+      box-shadow: 0 3px 10px 0 #dee2e6;
+      border-radius: 8px;
+
+      .shopDetailsHeader {
+        text-transform: capitalize;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .addressInput {
+        display: flex;
+        justify-content: space-between;
+
+        :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+          width: 49%;
+        }
+
+        @include responsive("mdDown") {
+          flex-direction: column;
+
+          :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+            margin: 10px 0;
+            width: 100%;
+          }
+
+          margin: 0;
+        }
+      }
+    }
+
+    .shopAddress {
+      background-color: $white;
+      padding: 15px 20px;
+      margin: 20px 0;
+      box-shadow: 0 3px 10px 0 #dee2e6;
+      border-radius: 8px;
+
+      .shopAddressHeader {
+        text-transform: capitalize;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .addressTextarea {
+        :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+          width: 100%;
+        }
+
+        @include responsive("mdDown") {
+          margin: 7px 0;
+        }
+      }
+
+      .addressInput {
+        margin: 25px 0;
+        display: flex;
+        justify-content: space-between;
+
+        :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+          width: 49%;
+          // gap: 30px;
+        }
+
+        @include responsive("mdDown") {
+          flex-direction: column;
+
+          :global(.css-1u3bzj6-MuiFormControl-root-MuiTextField-root) {
+            margin: 7px 0;
+            width: 100%;
+          }
+
+          margin: 0;
+        }
+      }
+    }
+
+
+
+
+
+
+    .errorMsg {
+      color: $red;
+    }
+
+    .addressButton {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+
+      @include responsive("xsDown") {
+        flex-direction: column;
+        gap: 6px;
+
+        :global(.css-sghohy-MuiButtonBase-root-MuiButton-root) {
+          width: 100%;
+        }
+
+        :global(.css-1rwt2y5-MuiButtonBase-root-MuiButton-root) {
+          width: 100%;
+
+        }
+      }
+    }
+
+  }
+
+  @include responsive("lgDown") {
+    width: 85%;
+  }
+}

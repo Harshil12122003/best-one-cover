@@ -1,0 +1,26 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/colors.module.scss';
+
+
+
+.mainComponent {
+  // height: calc(100vh - 66px);
+  height: 100vh;
+  background-color: rgb(245, 248, 250);
+  overflow: auto;
+  padding: 0 20px;
+  padding-top: 66px;
+
+
+  .brandTitle, .categoryTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    border-bottom: 1px solid $gray-500;
+
+  .categoryClose, .brandClose{
+    margin-top: -2px;
+
+  }
+  }
+}

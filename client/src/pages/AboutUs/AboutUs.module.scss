@@ -1,0 +1,53 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/colors.module.scss';
+
+
+.aboutUs {
+    min-height: calc(100vh - 195px);
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .mainTitle {
+        text-transform: capitalize;
+    }
+
+    .aboutUsContainer {
+
+        .mainHeader {
+            margin-top: 35px;
+            margin-bottom: 40px;
+
+            // h2{
+            //     border-bottom: 1px solid;
+            // }
+            .thought {
+                background-color: #eeeeee;
+                font-size: 20px;
+                padding: 10px 20px;
+                border-left: 5px solid rgb(199, 0, 0);
+                margin: 25px 0 15px 0;
+            }
+            .shortThoght{
+                font-size: 19px;
+
+            }
+        }
+
+        .best1CoverOffer {
+            margin-top: 30px;
+            .offerTitle {
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            .tagline {
+                font-size: 19px;
+                .label {
+                    color: $banner-bg;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,484 @@
+import React, { useEffect } from "react";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import "./OrderDetails.css";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
+import ImageIcon from "@mui/icons-material/Image";
+import WorkIcon from "@mui/icons-material/Work";
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Divider from '@mui/material/Divider';
+import { useParams } from "react-router";
+import { actions } from "redux/Order/action";
+import { useSelector, useDispatch } from "react-redux";
+import BreadCrumb from "components/atoms/BreadCrumb";
+
+const data = [
+  {
+    name: "Enflamo Back Cover for Apple iPhone 14 Pro (Black, Shock Proof, Pack of: 1)",
+    price: 399,
+    quantity: 1,
+    image:
+      "https://rukminim1.flixcart.com/image/416/416/xif0q/cases-covers/back-cover/1/0/3/cler-bumpr-case-14-pro-black-enflamo-original-imaggpnfu5wfyahn.jpeg?q=70",
+    product: "63d60f076d0e5cf65a7089cf",
+    _id: "63f2f864ce0151ad0c913ea3",
+  },
+  {
+    name: "Enflamo Back Cover for Apple iPhone 14 Pro (Black, Shock Proof, Pack of: 1)",
+    price: 399,
+    quantity: 1,
+    image:
+      "https://rukminim1.flixcart.com/image/416/416/xif0q/cases-covers/back-cover/1/0/3/cler-bumpr-case-14-pro-black-enflamo-original-imaggpnfu5wfyahn.jpeg?q=70",
+    product: "63d60f076d0e5cf65a7089cf",
+    _id: "63f2f864ce0151ad0c913ea3",
+  },
+];
+
+function OrderDetails() {
+  const dispatch = useDispatch();
+  const { order } = useSelector((state) => state.order);
+  const { orderId } = useParams();
+
+  useEffect(() => {
+    dispatch(actions.getOrderDetails(orderId))
+  }, [orderId])
+
+
+  return (
+    <div className="customerDetails">
+      <div className="customerBreadCrum">
+
+        <Typography variant="h5" component="h2">
+          Customer Orders Details
+        </Typography>
+        <BreadCrumb
+          parentElement="Home"
+          childLink="/user/orders"
+          childElement="Orders"
+          child2Link="/user/orders"
+          child2Element="Customer Orders"
+          child3Link="/user/order/:id"
+          child3Element="Orders Details"
+        />
+      </div>
+
+      <Box sx={{ width: "100%" }}>
+        <Grid
+          container
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          sx={{ paddingTop : "15px" ,marginBottom: "25px"}}
+
+        >
+          <Grid item xs={12} sm={12} md={3}>
+            <Box
+              sx={{
+                padding: 3,
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                background : "#fff"
+
+              }}
+            >
+              <Box
+                sx={{
+                  marginBottom: 5,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Box sx={{}}>
+                  <Typography
+                    sx={{ fontSize: 20, color: "black", m: 0 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Order ID
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 16, mt: 1 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    #{order?._id}
+                  </Typography>
+                </Box>
+              </Box>
+              <Box>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Customer Name
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {order?.shippingInfo?.name}
+                  </Typography>
+                </div>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Customer Email
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {order?.shippingInfo?.email}
+                  </Typography>
+                </div>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Customer Mobile
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    +91 {order?.shippingInfo?.mobile}
+                  </Typography>
+                </div>
+                <hr style={{ marginBottom: 20 }} />
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Payment Method
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {order?.paymentMethod === "COD" ? "Cash On Delivery" : "CARD(Credit Card, Master Card VISA)"}
+                  </Typography>
+                </div>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Payment Status
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {order?.paymentInfo?.status?.toUpperCase()}
+                  </Typography>
+                </div>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Order Status
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {order?.orderStatus?.toUpperCase()}
+                  </Typography>
+                </div>
+                <div className="methodsDiv">
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", marginBottom: 1 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Ordered Date
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14, m: 0 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {new Date(order?.orderDate).toLocaleString()}
+                  </Typography>
+                </div>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={9}>
+            <Box
+              sx={{
+                padding: 3,
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                background : "#fff"
+
+              }}
+            >
+              <Box
+                sx={{
+                  marginBottom: 2,
+                }}
+              >
+                <Box sx={{}}>
+                  <Typography
+                    sx={{ fontSize: 20, color: "black", m: 0 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Ordered Products
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 14 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Total {order?.orderItems?.length} products
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box sx={{ width: "100%", marginTop: "10px" }}>
+                <TableContainer>
+                  <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Product</TableCell>
+                        <TableCell align="right">Qty</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {order?.orderItems?.length > 0 && order?.orderItems.map(
+                        (row, i) =>
+                          i < 6 && (
+                            <TableRow
+                              key={row._id}
+                              sx={{
+                                "&:last-child td, &:last-child th": {
+                                  border: 0,
+                                },
+                              }}
+                            >
+                              <TableCell component="th" scope="row">
+                                <ListItem>
+                                  <ListItemAvatar sx={{ marginRight: 2 }}>
+                                    <Avatar
+                                      alt="Remy Sharp"
+                                      src={row?.image}
+                                      variant="rounded"
+                                      sx={{ width: 60, height: 60 }}
+                                    />
+                                  </ListItemAvatar>
+                                  <ListItemText
+                                    primary={row?.name?.replace(/\b\w/g, (c) =>
+                                      c.toUpperCase()
+                                    )}
+                                    secondary={"Price: ₹" + row?.price}
+                                  />
+                                </ListItem>
+                              </TableCell>
+                              <TableCell align="right">
+                                {row?.quantity}
+                              </TableCell>
+                            </TableRow>
+                          )
+                      )}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+
+                <Divider />
+                <div className="totalPriceDiv text-end">
+                  <Typography
+                    sx={{ fontSize: 16, mt: 2 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Sub Total: ₹ {order?.itemsPrice}
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 16, color: "black", mt: 2 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Shipping Rate: ₹ {order?.taxPrice}
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 16, mt: 2 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Tax Rate: ₹ {order?.shippingPrice}
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: 18, color: "black", mt: 2 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Total Price: ₹ {order?.totalPrice}
+                  </Typography>
+                </div>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                padding: 3,
+                mt: 3,
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+                background : "#fff"
+
+              }}
+            >
+              <Box
+                sx={{
+                  marginBottom: 2,
+                }}
+              >
+                <Box sx={{}}>
+                  <Typography
+                    sx={{ fontSize: 20, color: "black", m: 0 }}
+                    //   color="text.secondary"
+                    gutterBottom
+                  >
+                    Shipping Details
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box sx={{ width: "100%", marginTop: "10px" }}>
+                <Grid
+                  container
+                  rowSpacing={1}
+                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                  sx={{ margin: 5 }}
+                >
+                  <Grid item xs={8} sx={{ mb: 3 }}>
+                    <div>
+                      <Typography
+                        sx={{ fontSize: 17, color: "black", m: 0 }}
+                        //   color="text.secondary"
+                        gutterBottom
+                      >
+                        Address Line
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: 15, mt: 1 }}
+                        color="text.secondary"
+                        gutterBottom
+                      >
+                        {order?.shippingInfo?.address}
+                      </Typography>
+                    </div>
+                  </Grid>
+                  <Grid item xs={4} sx={{ mb: 3 }}>
+                    <div>
+                      <Typography
+                        sx={{ fontSize: 17, color: "black", m: 0 }}
+                        //   color="text.secondary"
+                        gutterBottom
+                      >
+                        Landmark
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: 15, mt: 1 }}
+                        color="text.secondary"
+                        gutterBottom
+                      >
+                        {order?.shippingInfo?.landmark}
+                      </Typography>
+                    </div>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <div>
+                      <Typography
+                        sx={{ fontSize: 17, color: "black", m: 0 }}
+                        //   color="text.secondary"
+                        gutterBottom
+                      >
+                        City
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: 15, mt: 1 }}
+                        color="text.secondary"
+                        gutterBottom
+                      >
+                        {order?.shippingInfo?.city}
+                      </Typography>
+                    </div>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <div>
+                      <Typography
+                        sx={{ fontSize: 17, color: "black", m: 0 }}
+                        //   color="text.secondary"
+                        gutterBottom
+                      >
+                        State
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: 15, mt: 1 }}
+                        color="text.secondary"
+                        gutterBottom
+                      >
+                        {order?.shippingInfo?.state}
+                      </Typography>
+                    </div>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <div>
+                      <Typography
+                        sx={{ fontSize: 17, color: "black", m: 0 }}
+                        //   color="text.secondary"
+                        gutterBottom
+                      >
+                        Pin Code
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: 15, mt: 1 }}
+                        color="text.secondary"
+                        gutterBottom
+                      >
+                        {order?.shippingInfo?.pinCode}
+                      </Typography>
+                    </div>
+                  </Grid>
+                </Grid>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </div>
+  );
+}
+
+export default OrderDetails;

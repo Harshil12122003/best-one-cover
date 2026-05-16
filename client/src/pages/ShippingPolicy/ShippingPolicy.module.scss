@@ -1,0 +1,47 @@
+@import '../../styles/breakpoints.module.scss';
+@import '../../styles/colors.module.scss';
+
+
+.shippingPolicy {
+    min-height: calc(100vh - 195px);
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .mainTitle {
+        text-transform: capitalize;
+    }
+
+    .shippingPolicyContainer {
+
+        .mainHeader {
+            margin-top: 35px;
+            margin-bottom: 40px;
+            .title {
+                font-size: 25px;
+            }
+            .thought {
+                background-color: #eeeeee;
+                font-size: 20px;
+                padding: 10px 20px;
+                border-left: 5px solid rgb(199, 0, 0);
+                margin: 25px 0 15px 0;
+            }
+            .unOrderList {
+                list-style-type: disc;
+
+            }
+        }
+
+        .information {
+            margin-top: 30px;
+            .infoTitle {
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            .tagline {
+                font-size: 17px;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.filterDiv{
+    width: 18%;
+}
+
+.priceFilterInput{
+    width: 80px;    
+}
+
+.productsDiv{
+    width: 81%;
+}
+
+.subTiTleColor{
+    color: rgb(95, 94, 94);
+}
+
+
+@media only screen and (max-width:992px){
+    .filterDiv{
+        display: none;
+    }
+
+    .productsDiv{
+        width: 100%;
+    }
+} 
+
+@media only screen and (max-width:768px){
+    .productsDiv{
+        box-shadow: none!important;
+    }
+} 
