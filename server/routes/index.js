@@ -33,4 +33,8 @@ router.use("/api", expenseRoute);
 router.use('/api', feedbackRoute);
 router.use('/api', contactRoute);
 
+router.get('/', (req, res) => {
+  res.send('Backend API is running successfully!');
+});
+
 module.exports = router;
